@@ -21,7 +21,7 @@
     $( document ).ready(function() {
       $('#email-form').on('submit','',function(e){
         var data = $(this).serialize();
-        posting = $.post("http://localhost:3000/v1/landingpgsignup",data);
+        posting = $.post("http://api.gokurbi.com/v1/landingpgsignup",data);
         posting.complete(function(response){
           if(posting.responseText == "true"){
             alert('Your journal was saved.');
