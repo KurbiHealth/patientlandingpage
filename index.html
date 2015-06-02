@@ -10,12 +10,29 @@
   <link rel="stylesheet" type="text/css" href="css/normalize.css">
   <link rel="stylesheet" type="text/css" href="css/webflow.css">
   <link rel="stylesheet" type="text/css" href="css/gokurbi.webflow.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
   <script>
     WebFont.load({
       google: {
         families: ["Bitter:400,700,400italic","Droid Sans:400,700","Droid Serif:400,700"]
       }
+    });
+    $( document ).ready(function() {
+      $('#email-form').on('submit','',function(e){
+        var data = $(this).serialize();
+        posting = $.post("http://localhost:3000/v1/landingpgsignup",data);
+        posting.complete(function(response){
+          if(posting.responseText == "true"){
+            alert('Your journal was saved.');
+            //window.location = "<?php echo ROOT_URL.LOGGED_IN_HOME_URL; ?>"
+          }else{
+            alert('There was a problem, please try again.');
+          }
+        });
+
+        return false;
+      });
     });
   </script>
   <script type="text/javascript" src="js/modernizr.js"></script>
@@ -38,19 +55,19 @@
     <h2>Try Kurbi For Free</h2>
     <div class="w-form early_access_form">
       <form class="form_fields" id="email-form" name="email-form" data-name="Email Form">
-        <label class="member_select_title first_name" for="name">First Name:</label>
-        <input class="w-input first_name_input" id="name" type="text" placeholder="what's your first name" name="name" data-name="Name">
-        <label class="member_select_title last_name" for="Last-Name">Last Name:</label>
-        <input class="w-input last_name_input" id="Last-Name" type="text" placeholder="what's your last name" name="Last-Name" required="required" data-name="Last Name">
+        <label class="member_select_title first_name" for="firstname">First Name:</label>
+        <input class="w-input first_name_input" id="name" type="text" placeholder="what's your first name" name="firstname" data-name="Name">
+        <label class="member_select_title last_name" for="lastname">Last Name:</label>
+        <input class="w-input last_name_input" id="Last-Name" type="text" placeholder="what's your last name" name="lastname" required="required" data-name="Last Name">
         <label class="member_select_title email_address" for="email">Email Address:</label>
         <input class="w-input email_input" id="email" type="email" placeholder="what's your email address" name="email" data-name="Email" required="required">
         <label class="member_select_title" for="field">Which Best Describes You</label>
         <select class="w-select member_select" id="field" name="field" required="required">
           <option value="">Select one...</option>
-          <option value="First">MS Fighter</option>
-          <option value="Second">Family Supporter</option>
-          <option value="Third">Friend Supporter</option>
-          <option value="Fourth">Clinical Supporter</option>
+          <option value="patient">MS Fighter</option>
+          <option value="familysupporter">Family Supporter</option>
+          <option value="friendsupporter">Friend Supporter</option>
+          <option value="healthcare">Clinical Supporter</option>
         </select>
         <input class="w-button submit_button" type="submit" value="Sign-up" data-wait="Please wait...">
       </form>
