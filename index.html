@@ -1,38 +1,21 @@
 <!DOCTYPE html>
 <!-- This site was created in Webflow. http://www.webflow.com-->
-<!-- Last Published: Wed May 13 2015 15:08:50 GMT+0000 (UTC) -->
-<html data-wf-site="55393ab671c2e20a5c3ae975" data-wf-page="55393ab671c2e20a5c3ae976">
+<!-- Last Published: Sat Aug 01 2015 00:12:58 GMT+0000 (UTC) -->
+<html data-wf-site="55ba3eaefe8ca20f1be257cb" data-wf-page="55ba3eaefe8ca20f1be257cc">
 <head>
   <meta charset="utf-8">
-  <title>gokurbi</title>
+  <title>kurbi</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="generator" content="Webflow">
   <link rel="stylesheet" type="text/css" href="css/normalize.css">
   <link rel="stylesheet" type="text/css" href="css/webflow.css">
-  <link rel="stylesheet" type="text/css" href="css/gokurbi.webflow.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/kurbi.webflow.css">
   <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
   <script>
     WebFont.load({
       google: {
-        families: ["Bitter:400,700,400italic","Droid Sans:400,700","Droid Serif:400,700"]
+        families: ["Open Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic"]
       }
-    });
-    $( document ).ready(function() {
-      $('#email-form').on('submit','',function(e){
-        var data = $(this).serialize();
-        posting = $.post("http://api.gokurbi.com/v1/landingpgsignup",data);
-        posting.complete(function(response){
-          if(posting.responseText == "true"){
-            alert('Your journal was saved.');
-            //window.location = "<?php echo ROOT_URL.LOGGED_IN_HOME_URL; ?>"
-          }else{
-            alert('There was a problem, please try again.');
-          }
-        });
-
-        return false;
-      });
     });
   </script>
   <script type="text/javascript" src="js/modernizr.js"></script>
@@ -40,116 +23,58 @@
   <link rel="apple-touch-icon" href="https://daks2k3a4ib2z.cloudfront.net/img/webclip.png">
 </head>
 <body>
-  <div class="w-section hero">
-    <div class="w-container header_nav">
-      <a class="w-inline-block" href="index.html"><img class="logo_image" src="images/logo.png" width="104">
-      </a><a class="button" href="our-story.html">Our Story</a>
-    </div>
-    <div class="w-container hero_copy">
-      <h1>Accomplish Goals<br>Despite Multiple Sclerosis</h1>
-      <div class="hero_copy_content">Kurbi makes it easier for you to work towards your goals, keep track of your MS symptoms, and -- when you need it -- get support from your doctors and loved ones.</div>
-    </div>
-  </div>
-  <div class="w-section support"></div>
-  <div class="w-container form_box">
-    <h2>Try Kurbi For Free</h2>
-    <div class="w-form early_access_form">
-      <form class="form_fields" id="email-form" name="email-form" data-name="Email Form">
-        <label class="member_select_title first_name" for="firstname">First Name:</label>
-        <input class="w-input first_name_input" id="name" type="text" placeholder="what's your first name" name="firstname" data-name="Name">
-        <label class="member_select_title last_name" for="lastname">Last Name:</label>
-        <input class="w-input last_name_input" id="Last-Name" type="text" placeholder="what's your last name" name="lastname" required="required" data-name="Last Name">
-        <label class="member_select_title email_address" for="email">Email Address:</label>
-        <input class="w-input email_input" id="email" type="email" placeholder="what's your email address" name="email" data-name="Email" required="required">
-        <label class="member_select_title" for="field">Which Best Describes You</label>
-        <select class="w-select member_select" id="field" name="field" required="required">
-          <option value="">Select one...</option>
-          <option value="patient">MS Fighter</option>
-          <option value="familysupporter">Family Supporter</option>
-          <option value="friendsupporter">Friend Supporter</option>
-          <option value="healthcare">Clinical Supporter</option>
-        </select>
-        <input class="w-button submit_button" type="submit" value="Sign-up" data-wait="Please wait...">
-      </form>
-      <div class="w-form-done">
-        <p>Thank you! Your submission has been received!</p>
-      </div>
-      <div class="w-form-fail">
-        <p>Oops! Something went wrong while submitting the form :(</p>
+  <div class="w-nav navbar" data-collapse="medium" data-animation="default" data-duration="400" data-contain="1">
+    <div class="w-container">
+      <a class="w-nav-brand brand" href="index.html"><img src="images/logo.png" width="130">
+      </a>
+      <nav class="w-nav-menu" role="navigation"><a class="w-nav-link navlink" href="ourstory.html">Our Story</a><a class="w-nav-link navlink" href="#">Sign-in</a>
+      </nav>
+      <div class="w-nav-button menubutton">
+        <div class="w-icon-nav-menu"></div>
       </div>
     </div>
-    <h4>We’re building Kurbi for you</h4>
-    <div class="support-copy">You know it, we know it – MS doesn’t have you – but darn if it doesn’t make life tough sometimes. Everyday you’re doing amazing things despite the reality of MS. That’s why we’re building Kurbi, to help you share your story with the people that care for and about you.
-      <br>
-      <br>The truth is that family, friends, doctors... they don’t always understand what living with MS is like. Your symptoms are coming and going at random times of the day, you’re managing confusing medication schedules and dosages, and you’re pushing yourself to be active even when your body is literally fighting against you. Yet you persevere. That’s the story we want to help you share one goal at a time.</div>
   </div>
-  <div class="mobile_support_background"></div>
-  <div class="w-section story">
-    <div class="w-container story_container">
-      <h5>This is how Kurbi works</h5>
-      <div class="w-row stories">
-        <div class="w-col w-col-4 story1"><img class="story1_image" src="images/Story1.png" width="328">
-          <div class="story_content">
-            <div class="story1_content_title">Share a Goal</div>
-            <div class="story1_content_body">Kathy, diagnosed with MS 8 years ago, wants to take advantage of her bikeable community this summer so she sets an exercise a goal on Kurbi.</div>
+  <div class="w-section section hero home">
+    <div class="w-container herocontainer home">
+      <h1 class="accessheroheading">Safely go beyond your limitations</h1>
+      <h4 class="homeheadingsupport">Find community, encouragement, and inspiration to do the things that matter to you.</h4><a class="button access home" href="freeaccess.html">Get Early Access</a>
+    </div>
+  </div>
+  <div class="w-section section">
+    <div class="w-container supportcontainer">
+      <h2>This is How Kurbi Works</h2>
+      <div class="w-row">
+        <div class="w-col w-col-4">
+          <div><img class="image" src="images/image1.png">
+            <h3>Empowering Data</h3>
+            <p class="homesupporttext">As you use Kurbi to set goals and track symptoms we show you how to keep your pace.</p>
           </div>
         </div>
-        <div class="w-col w-col-4 story2"><img class="story2_image" src="images/Story2.png" width="337">
-          <div class="story2_content">
-            <div class="story2_content_title">Get Support</div>
-            <div class="story2_content_body">Kathy’s son, seeing her new goal on Kurbi, decided to join Kathy to help her achieve her goal. He signed up to help her find the perfect bike.</div>
+        <div class="w-col w-col-4">
+          <div><img class="image image2" src="images/image2.png">
+            <h3>Community Support</h3>
+            <p class="homesupporttext">Create a personal support team to help you stay on track towards your goals and encourage you when things aren’t going as planned.</p>
           </div>
         </div>
-        <div class="w-col w-col-4 story3"><img class="story3_image" src="images/Story3.png" width="380">
-          <div class="story3_content">
-            <div class="story3_title">Stay Safe</div>
-            <div class="story3_content_body">Kathy’s care-providers used Kurbi to keep track of her progress and post important information on how to avoid fatigue and over-heating during exercise.</div>
+        <div class="w-col w-col-4">
+          <div><img class="image image3" src="images/image3.png">
+            <h3>Expert Advice</h3>
+            <p class="homesupporttext">Get advice from your providers or experienced professionals in your area whenever you need it.</p>
           </div>
         </div>
       </div>
     </div>
-    <div class="w-container preview_button_container"><a class="button goal_preview_button" href="#" data-ix="goal-button">Preview List of Goals</a>
+  </div>
+  <div class="w-section section about">
+    <div class="w-container aboutcontainer">
+      <h2>About Us</h2>
+      <h4 class="aboutsub">We’re a small team based in Madison, Wi with close connections to several chronic conditions. We’re building Kurbi because we want to help people achieve their highest quality of life.</h4><a class="button goalpreview" href="freeaccess.html">Check out the awesome things we can help you do!</a>
     </div>
   </div>
-  <div class="w-section goal_list_section goal_container goal1" data-ix="goal-button">
-    <div class="w-container goal_container" data-ix="goal-section-on-load">
-      <div class="w-row physical_goal_row">
-        <div class="w-col w-col-3 goal1"><img src="images/Exercise.png">
-          <div class="goal1_text">Exercise</div>
-        </div>
-        <div class="w-col w-col-3 goal1"><img src="images/Travel.png">
-          <div class="goal1_text">Travel</div>
-        </div>
-        <div class="w-col w-col-3 goal1"><img src="images/Sleep.png">
-          <div class="goal1_text">Rest</div>
-        </div>
-        <div class="w-col w-col-3 goal1"><img src="images/Diet.png">
-          <div class="goal1_text">Diet</div>
-        </div>
-      </div>
-      <div class="w-row physical_goal_row">
-        <div class="w-col w-col-3 goal1"><img src="images/Make.png">
-          <div class="goal1_text">Make</div>
-        </div>
-        <div class="w-col w-col-3 goal1"><img src="images/Work.png">
-          <div class="goal1_text">Work</div>
-        </div>
-        <div class="w-col w-col-3 goal1"><img src="images/Learn.png">
-          <div class="goal1_text">Learn</div>
-        </div>
-        <div class="w-col w-col-3 goal1"><img src="images/Find.png">
-          <div class="goal1_text">Find</div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="w-section footer">
-    <div class="w-row">
-      <div class="w-col w-col-6 footer1">
-        <div class="footer1_text">Follow Our Progress:</div><img class="icon" src="images/twitter.png" width="20"><img class="icon2" src="images/facebook.png" width="10">
-      </div>
-      <div class="w-col w-col-6 footer2">
-        <div class="copyright">© 2011-2015 Kurbi Health, Inc.</div>
+  <div class="footer">
+    <div class="w-container">
+      <div>
+        <h6>© 2011-2015 Kurbi Health, Inc.</h6>
       </div>
     </div>
   </div>

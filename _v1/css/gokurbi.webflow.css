@@ -583,7 +583,10 @@ a.w--current {
 html.w-mod-js *[data-ix="goal-section-on-load"] {
   display: none;
 }
+
+
 @media (max-width: 991px) {
+
   h1 {
     margin-top: 84px;
     padding-top: 0px;
@@ -623,6 +626,10 @@ html.w-mod-js *[data-ix="goal-section-on-load"] {
   }
   .hero {
     background-size: contain;
+  }
+  .hero_copy_content{
+/* added 6/12/15 by Matt Eckman */
+    display:none;
   }
   .header_nav {
     margin-top: 2px;
@@ -744,7 +751,12 @@ html.w-mod-js *[data-ix="goal-section-on-load"] {
     text-align: center;
   }
 }
+
+
 @media (max-width: 767px) {
+  /* the entire "This is How Kurbi Works" section disappears
+  Is that right? */
+
   h1 {
     width: 100%;
     margin-top: 39px;
@@ -800,6 +812,14 @@ html.w-mod-js *[data-ix="goal-section-on-load"] {
   .hero {
     margin-top: -2px;
   }
+/* added 6/12/15 by Matt Eckman */
+  .hero .header_nav .w-inline-block{
+    margin-top: 60px;
+  }
+  .hero .hero_copy{
+    margin-top: 0 !important;
+  }
+/* end added */
   .logo_image {
     margin-top: -79px;
     margin-left: 40px;
@@ -890,12 +910,15 @@ html.w-mod-js *[data-ix="goal-section-on-load"] {
     margin-top: -18px;
     padding-top: 4px;
     padding-bottom: 4px;
-    padding-left: 160px;
+    padding-left: 20px; /* changed 6/12/15 by Matt Eckman */
   }
   .footer1_text {
-    margin-top: -51px;
+    margin-top: 0;
     margin-left: 10px;
     padding-top: 61px;
+  }
+  .icon{
+    margin-left: 170px;
   }
   .copyright {
     margin-left: -3px;
@@ -986,6 +1009,9 @@ html.w-mod-js *[data-ix="goal-section-on-load"] {
   }
 }
 @media (max-width: 479px) {
+  /* "Accomplish Goals" should disappear altogether 
+  Social media ("Follow our Progress") is messed up */
+
   h1 {
     width: 90%;
     margin-top: 0px;
@@ -1049,10 +1075,14 @@ html.w-mod-js *[data-ix="goal-section-on-load"] {
   .header_nav {
     margin-top: 0px;
   }
+  .header_nav .w-inline-block{
+    margin-top: 0px !important;
+  }
   .logo_image {
     width: 85px;
-    margin-top: 28px;
-    margin-left: 118px;
+    margin-top: 0;
+    margin-left: 10px;
+    margin-bottom: 20px;
   }
   .support-copy {
     display: block;
@@ -1075,7 +1105,7 @@ html.w-mod-js *[data-ix="goal-section-on-load"] {
     margin-top: -507px;
   }
   .story {
-    height: 618px;
+    height: 468px;
     margin-top: 94px;
     background-color: #390073;
     background-size: auto;
@@ -1162,11 +1192,12 @@ html.w-mod-js *[data-ix="goal-section-on-load"] {
     margin-left: 71px;
     text-align: center;
   }
+/* ---- display: none???????; ---- */
   .goal_preview_button {
     display: block;
     width: 192px;
     height: 40px;
-    margin-top: 550px;
+    margin-top: 400px;
     margin-left: 67px;
     padding: 10px 0px 0px;
     border-style: none;
